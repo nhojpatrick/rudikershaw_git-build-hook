@@ -13,7 +13,7 @@ import org.apache.maven.it.Verifier;
 import org.apache.maven.plugin.MojoFailureException;
 import org.hamcrest.core.Is;
 import org.hamcrest.core.IsEqual;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.rules.TemporaryFolder;
 

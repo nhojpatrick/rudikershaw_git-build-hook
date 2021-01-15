@@ -8,7 +8,7 @@ import java.io.File;
 import org.apache.maven.it.Verifier;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.rules.TemporaryFolder;
 
 /** Unit and integration tests for the GitBuildHookMojo. */

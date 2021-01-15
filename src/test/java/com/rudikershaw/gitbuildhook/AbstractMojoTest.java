@@ -1,6 +1,6 @@
 package com.rudikershaw.gitbuildhook;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +11,8 @@ import java.nio.file.StandardCopyOption;
 import org.apache.maven.it.VerificationException;
 import org.apache.maven.plugin.testing.MojoRule;
 import org.apache.maven.it.Verifier;
+import org.hamcrest.core.Is;
+import org.hamcrest.core.IsEqual;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
@@ -77,7 +79,8 @@ public class AbstractMojoTest {
     protected Verifier getVerifier(final String project) throws VerificationException {
         final Verifier verifier = new Verifier(project);
         final File testRepsotiroyDirectory = new File("target/test-repo");
-        assertTrue(testRepsotiroyDirectory.exists(), "Plugin must be installed into a local repo for tests");
+
+        assertThat("Plugin must be installed into a local repo for tests", testRepsotiroyDirectory.exists(), Is.is(IsEqual.equalTo(true)));
         verifier.setLocalRepo(testRepsotiroyDirectory.getAbsolutePath());
         return verifier;
     }
