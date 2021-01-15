@@ -19,9 +19,7 @@ import org.junit.rules.TemporaryFolder;
 /** Abstract test for Mojos. */
 public class AbstractMojoTest {
 
-    private final MojoRule rule = new MojoRule();
-
-    private final TemporaryFolder folder = new TemporaryFolder();
+    private final MojoRule ruleX = new MojoRule();
 
     /**
      * Returns the rule.
@@ -30,7 +28,7 @@ public class AbstractMojoTest {
      */
     @Rule
     public MojoRule getRule() {
-        return rule;
+        return ruleX;
     }
 
     /**
@@ -40,7 +38,7 @@ public class AbstractMojoTest {
      */
     @Rule
     public TemporaryFolder getFolder() {
-        return folder;
+        return folderX;
     }
 
     /**
